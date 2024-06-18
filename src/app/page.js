@@ -12,13 +12,13 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className='page'>
       <h1>Bienvenido a nuestra página de registro de citas veterinarias</h1>
       <p>
         En nuestra clínica, nos preocupamos por la salud y el bienestar de tus
         mascotas. Ofrecemos un servicio profesional y amable para ayudarte a
         mantener a tus peludos amigos felices y saludables.
       </p>
-    </>
+    </div>
   );
 }

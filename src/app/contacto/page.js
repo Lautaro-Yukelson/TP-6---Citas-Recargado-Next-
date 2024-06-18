@@ -4,7 +4,7 @@ import FormInput from '@/components/FormInput/FormInput';
 
 const Contacto = () => {
   return (
-    <div>
+    <div className='page'>
       <h1>Contacto</h1>
       <p>
         ¿Tienes alguna pregunta o inquietud? ¡No dudes en ponerte en contacto
