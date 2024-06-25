@@ -1,15 +1,21 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ListadoCitas from '../../components/ListadoCitas/ListadoCitas';
 import Form from '../../components/Form/Form';
 
 export default function Home() {
-  const [citas, setCitas] = useState([]);
+  const [citas, setCitas] = useState(() => {
+    const localData = localStorage.getItem("citas");
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("citas", JSON.stringify(citas));
+  }, [citas]);
 
   const eliminarCita = (id) => {
-    const nuevasCitas = citas.filter((cita) => cita.id !== id);
-    setCitas(nuevasCitas);
+    setCitas(citas.filter((cita) => cita.id !== id));
   };
 
   return (
